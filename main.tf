@@ -48,10 +48,6 @@ resource "google_compute_instance" "hashicat" {
   zone         = "${var.region}-b"
   machine_type = var.machine_type
 
-  labels = {
-    department = "devops"
-  }
-
   boot_disk {
     initialize_params {
       image = "ubuntu-os-cloud/ubuntu-1804-lts"
@@ -72,6 +68,7 @@ resource "google_compute_instance" "hashicat" {
 
   labels = {
     name = "hashicat"
+    department = "devops"
   }
 
 }
